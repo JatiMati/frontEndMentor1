@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+
+  <title>Frontend Mentor | Results summary component</title>
+
+  <link rel="stylesheet" href="/results-summary-component-main/css/style.min.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      position: absolute;
+      left: 50vw;
+      bottom: 10px;
+      transform: translate(-50%, -50%);
+
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="result">
+      <div class="result__title">Your Result</div>
+      <div class="result__circle">
+        <span class="result__circle--score">76</span>
+        <span class="result__circle--of paragraph">of 100</span>
+      </div>
+      <div class="result__message">
+        <h1 class="result__message--tittle">Great</h1>
+        <p class="result__message--content paragraph">You scored higher than 65% of the people who have taken these
+          tests.</p>
+      </div>
+    </div>
+
+    <div class="summary">
+      <h1 class="summary__title">Summary</h1>
+      <ul class="summary__list">
+        <li class="summary__list--item-name reaction paragraph">Reaction
+          <span class="summary__list--item-score"><span class="bold">80</span> / 100</span>
+        </li>
+        <li class="summary__list--item-name memory paragraph">Memory
+          <span class="summary__list--item-score"><span class="bold">92</span> / 100</span>
+        </li>
+        <li class="summary__list--item-name verbal paragraph">Verbal
+          <span class="summary__list--item-score"><span class="bold">61</span>/ 100</span>
+        </li>
+        <li class="summary__list--item-name visual paragraph">Visual
+          <span class="summary__list--item-score"><span class="bold">72</span> / 100</span>
+        </li>
+      </ul>
+      <button class="summary__button">Continue</button>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Mateusz Jaroszyński</a>.
+  </div>
+</body>
+
+</html>

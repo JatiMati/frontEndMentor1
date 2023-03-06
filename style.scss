@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+//primary colors
+$Light-red: hsl(0, 100%, 67%);
+$Orangey-yellow: hsl(39, 100%, 56%);
+$Green-teal: hsl(166, 100%, 37%);
+$Cobalt-blue: hsl(234, 85%, 45%);
+
+//background gradient
+$Light-slate-blue: hsl(252, 100%, 67%);
+$Light-royal-blue: hsl(241, 81%, 54%);
+
+//circle gradient
+$Violet-blue: hsla(256, 72%, 46%, 1);
+$Persian-blue: hsla(241, 72%, 46%, 0);
+
+//font-size
+$font-size-paragraph: 18px;
+$font-size-big: 72px;
+$font-size-medium: 24px;
+
+//neutral colors
+$White: hsl(0, 0%, 100%);
+$White-transparent: hsl(0, 0%, 100%, 50%);
+$Pale-blue: hsl(221, 100%, 96%);
+$Light-lavender: hsl(241, 100%, 89%);
+$Dark-gray-blue: hsl(224, 30%, 27%);
+
+
+//size
+$section-width: 380px;
+$section-height: 500px;
+
+
+@mixin item-color($value, $transparency) {
+    color: $value;
+    background-color: hsla(39, 100%, 56%, $transparency);
+}
+
+@mixin category-look($left-right: 40px) {
+    //flex
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    //size
+    width: 50%;
+    padding: 40px $left-right;
+
+    //look
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.paragraph {
+    font-size: $font-size-paragraph;
+}
+
+.wrapper {
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    // line-height: 100vh;
+    // margin: auto auto;
+    //size
+    width: $section-width *2;
+    height: $section-height;
+
+    //flex
+    display: flex;
+
+    //look
+    // border: 1px solid red;
+
+    .result {
+        @include category-look();
+        //container flex
+
+        align-items: center;
+
+        //element flex
+
+        //look
+
+        text-align: center;
+
+        border-radius: 20px;
+        background: linear-gradient(180deg, $Light-slate-blue, $Light-royal-blue);
+        color: $White;
+
+        .result__title {
+            font-size: ($font-size-medium - 4px);
+
+        }
+
+        .result__circle {
+            //flex container
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            //size
+            width: ($section-width *0.6);
+            height: ($section-width *0.6);
+            border-radius: 50%;
+            //look
+            background: linear-gradient(180deg, $Violet-blue, $Persian-blue);
+
+            .result__circle--score {
+                font-size: $font-size-big;
+                display: block;
+                font-weight: 800;
+            }
+
+            .result__circle--of {
+                font-size: 0.8rem;
+                display: block;
+                color: $White-transparent;
+            }
+        }
+
+        .result__message {
+            .result__message--tittle {
+                font-size: $font-size-medium;
+                margin-bottom: 12px;
+            }
+
+            .result__message--content {
+                color: $White-transparent;
+            }
+        }
+
+
+    }
+
+    .summary {
+        @include category-look(30px);
+
+        .summary__title {
+            font-size: ($font-size-medium - 4px);
+        }
+
+        .summary__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+
+            .summary__list--item-name {
+                //flex
+                display: flex;
+                justify-content: space-between;
+
+                //size
+                padding: 12px;
+                margin: 10px;
+
+                //look
+                border-radius: 20px;
+
+                .bold {
+                    margin-right: 5px;
+                    font-weight: 800;
+                }
+
+
+            }
+
+            .reaction {
+                @include item-color($Light-red, 0.08/2);
+            }
+
+            .memory {
+                @include item-color($Orangey-yellow, 0.092/2)
+            }
+
+            .verbal {
+                @include item-color($Green-teal, 0.061/2)
+            }
+
+            .visual {
+                @include item-color($Cobalt-blue, 0.072/2)
+            }
+
+            .summary__list--item-score {}
+        }
+
+        .summary__button {
+            padding: 17px 0px;
+            border-radius: 100px;
+            border: none;
+
+            background-color: $Dark-gray-blue;
+            color: $White;
+            font-size: $font-size-paragraph;
+        }
+
+        .summary__button:hover {
+            background: linear-gradient(180deg, $Light-slate-blue, $Light-royal-blue);
+        }
+    }
+
+}
